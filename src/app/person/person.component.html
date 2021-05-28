@@ -1,0 +1,17 @@
+<li class="list=group-item" (click)="onClicked()">
+    <div [ngClass]="{
+        'text-primary':person.states=='MH',
+        'text-danger':person.states=='HB'
+      }"
+      [ngStyle]="{
+          'font-size':'36px',
+          'text-decoration':'underline'
+      }"
+      >
+        {{person.name}}-{{person.states}}
+    </div>
+</li>
+
+<!--
+    
+-->

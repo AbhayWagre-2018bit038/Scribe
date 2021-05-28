@@ -1,0 +1,85 @@
+<div class="container">
+<!--
+    ts file added here
+  firstName: String="Abhay";
+  number1: number=38;
+  disbutton : Boolean=false;
+  google : string="https://www.google.com";
+  logo: string="https://angular.io/assets/images/logos/angular/angular.svg";
+
+   sayHello(){
+    alert("Hello")
+  }
+  log(){
+    console.log("log functon is called")
+  }
+
+    <h1>{{firstName}}</h1>
+    <h1>{{number1}}</h1>
+  <img [src]="logo">
+  <a role="button" class="btn btn-primary" [href]="google">
+      Go to Google
+  </a>
+  <button type="button" class="btn btn-primary" [disabled]="disbutton">
+      I am disabled
+  </button>
+  <button type="button" class="btn btn-primary" (click)="sayHello()"> Click</button>
+  <input type="text" class="form-control" placeholder="your Name here" (change)="log()">
+ 
+  tow way binding
+  ts file name: String="Abhay";
+   <input type="text" 
+  class="form-control" 
+  placeholder="Your Name"
+  [(ngModel)]="name">
+  <h1>{{name}}</h1>
+  
+  ngif
+  name: String="Abhay";
+  googlehi:boolean= false;
+  todisplay(){
+    if(this.name=="Abhay" ){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  <a role="button" class="btn btn-primary" [href]="googlehi" *ngIf=todisplay()>
+    Go to Google
+</a>
+<input type="text" 
+  class="form-control" 
+  placeholder="Your Name"
+  [(ngModel)]="name">
+
+  ngfor
+  fruits: string[]=["apple","oranges"];
+  <ul class="list-group">
+        <li 
+        class="list-group-item"
+        *ngFor="let fruit of  fruits">{{fruit}}</li>
+  </ul>
+
+    ngSwitch
+     *ngFor="let pepole of  pepoles;" [ngSwitch]="pepole.states">
+    <div *ngSwitchCase="'MH'" class="text-primary">{{pepole.name}}-{{pepole.states}}</div>
+        <div *ngSwitchCase="'AP'" class="text-danger">{{pepole.name}}-{{pepole.states}}</div>
+        <div *ngSwitchCase="'HB'" class="text-success">{{pepole.name}}-{{pepole.states}}</div>
+        <div *ngSwitchDefault="'MH'" class="text-dark">{{pepole.name}}-{{pepole.states}}</div>
+
+      Input and Output
+
+      
+      
+-->
+  <ul class="list-group">
+    <app-person
+    class="list-group-item"
+    *ngFor="let person of pepoles;" [person]="person" (personClicked)="onPersonClicked()"> 
+    </app-person>
+  </ul>
+
+
+</div>
